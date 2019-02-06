@@ -1,3 +1,0 @@
-/* Javascript */
-
-console.log("test");
