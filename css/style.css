@@ -8,7 +8,7 @@ body, html{
     color: #666;
 }
 
-.image1, .image2, .image3, .image4{
+.image1, .image2, .image3, .image4, .image5{
     position: relative;
     opacity: 0.7;
     background-position: center;
@@ -38,6 +38,11 @@ body, html{
     min-height: 225px;
 }
 
+.image5{
+    background-image:url(../images/brewery.jpg);
+    min-height: 225px;
+}
+
 .section{
     text-align: center;
     padding: 20px 40px;
@@ -56,6 +61,9 @@ body, html{
     color: rgba(85, 51, 7, 0.959);
     font-size: 50px;
     letter-spacing: 5px;
+    line-height: 40px;
+    
+   
 }
 
 .border{
@@ -63,6 +71,8 @@ body, html{
     padding: 10px;
     border-radius: 15px 50px;
     font-family: 'lobster', cursive;
+    size: auto;
+    
 }
 
 .button{
@@ -99,3 +109,23 @@ body, html{
     cursor: pointer;
 
 }
+
+.card-img-top{
+    display: inline-block;
+    max-width: 100%;
+    margin: 2.5% 2.5%;
+    position: relative;
+}
+
+.card{
+    display: inline-block;
+}
+
+@media screen and (max-width: 911px){
+    .smallbutton, .bigbutton, .button, .border, .image-text {
+      width: 100%;
+      margin-top: 20px;
+      position: relative;
+      display: inline-block;
+    }
+  }
