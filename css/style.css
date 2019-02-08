@@ -1,0 +1,101 @@
+body, html{
+    height: 100%;
+    margin:0;
+    font-size: 16px;
+    font-family: 'Acme', sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.image1, .image2, .image3, .image4{
+    position: relative;
+    opacity: 0.7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.image1{
+    background-image:url(../images/tray.jpeg);
+    min-height: 100%;
+    
+}
+
+.image2{
+    background-image:url(../images/bottles.jpg);
+    min-height: 225px;
+}
+
+.image3{
+    background-image:url(../images/samples.jpg);
+    min-height: 400px;
+}
+
+.image4{
+    background-image:url(../images/cheers.jpg);
+    min-height: 225px;
+}
+
+.section{
+    text-align: center;
+    padding: 20px 40px;
+}
+
+.section-dark, .section-light{
+    background-color: rgb(39, 45, 46);
+    color: white;
+}
+
+.image-text{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: rgba(85, 51, 7, 0.959);
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+.border{
+    background-color: ivory;
+    padding: 10px;
+    border-radius: 15px 50px;
+    font-family: 'lobster', cursive;
+}
+
+.button{
+    background-color: ivory;
+    padding: 10px;
+    border-radius: 15px 50px;
+    font-family: 'lobster', cursive;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(85, 51, 7, 0.959);
+    cursor: pointer;
+    
+}
+
+.smallbutton{
+    background-color: ivory;
+    padding: 10px;
+    border-radius: 15px 50px;
+    font-family: 'lobster', cursive;
+    text-align: center;
+    font-size: 10px;
+    color: rgba(85, 51, 7, 0.959);
+    cursor: pointer;
+}
+
+.bigbutton{
+    background-color: ivory;
+    padding: 10px;
+    border-radius: 15px 50px;
+    font-family: 'lobster', cursive;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(85, 51, 7, 0.959);
+    cursor: pointer;
+
+}
