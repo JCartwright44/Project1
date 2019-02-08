@@ -4,56 +4,52 @@ console.log("test");
 
 
 // Open Brewery DB API - www.openbrewerydb.org
+
 var param = $.param({
-    search: 'Ace',
-    by_brewery_type: '',
-    by_city: '',
-    by_country:  '',
-    by_latitude:  '',
-    by_longitude:  '',
-    by_name:  '',
-    by_phone:  '',
-    by_postal_code:  '',
-    by_state:  'New Jersey',
-    by_street:  '',
-    by_updated_at:  '',
-    by_website_url:  '',
-    by_limit:  ''
+    by_city: 'Sacramento',
+    by_postal_code: '',
+    by_state: '',
+    per_page: '5'
 })
-if (param.search !== ''){
-    var queryURL = 'https://api.openbrewerydb.org/breweries/search?='+ param.search;
+console.log(param)
+
+var search = '';
+
+if (search !== '') {
+    var queryURL = 'https://api.openbrewerydb.org/breweries/search?query=' + search + '&' + param;
 } else {
-var queryURL = 'https://api.openbrewerydb.org/breweries?' + param;
+    var queryURL = 'https://api.openbrewerydb.org/breweries?' + param;
 }
 
-$.ajax ({
+$.ajax({
     url: queryURL,
     method: 'GET'
-}).then(function(response) {
+}).then(function (response) {
 
     console.log(queryURL);
     console.log(response)
 })
 
-// Google Maps API - we need to make sure that it is actually free to use, otherwise we'll have to find another.
+// Eventbrite API. The first ajax gets the basic info, while the seond one gets the location info. For 'VenueID' the number has to be changed  to whichever item you're looking at on the page.
 
-// var api = 'AIzaSyChEiFO_52CO3UialiJJN9aqgsjOXrr7Io'
-// var queryURLMap = 'https://maps.googleapis.com/maps/api/js?key=' + api + 'callback=initMap';
+var tokenEB = 'LTCWX6ZN5R4U7VWXPNCG';
+var queryURLEB = 'https://www.eventbriteapi.com/v3/events/search/?token=' + tokenEB;
 
-// var map;
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: {lat: -34.397, lng: 150.644},
-//     zoom: 8
-//   });
-// }
+$.ajax({
+    url: queryURLEB,
+    method: 'GET'
+}).then(function (response) {
 
-// $.ajax ({
-//     url: queryURLMap, 
-//     method: 'Get'
+    console.log(response);
+    var secretTokenEB = 'GFBRL2DNRQJRRLKXRXK3'
+    var venueID = response.events[32].venue_id;
+    console.log('Venue' + venueID);
+    var queryURLEBVenue = 'https://www.eventbriteapi.com/v3/venues/' + venueID + '/?token=' + secretTokenEB;
 
-// }).then(function(response) {
-//     console.log(queryURLMap);
-//     console.log(response)
-// });
-
+    $.ajax({
+        url: queryURLEBVenue,
+        method: 'GET'
+    }).then(function (response2) {
+        console.log(response2)
+    })
+})
