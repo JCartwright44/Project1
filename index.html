@@ -5,21 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="assets/javascript/easy-autocomplete.min.css" rel="stylesheet" type="text/css">
+	<script src="assets/javascript/jquery-1.11.2.min.js"></script>
+	<script src="assets/javascript/jquery.easy-autocomplete.min.js" type="text/javascript" ></script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
    crossorigin=""/>
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <title>Brew[array]</title>
 </head>
 
 <body>
-    <div id="p0" class="image1">
+    <div id="p0" class="image1 overlay">
         <div class="image-text">
             <span class="border">
                 Brew[array]
             </span>
+            <br>
             <a href="#p4">
                 <button class="button">Search!</button></a>
             <a href="#p1">
@@ -58,8 +64,11 @@
 
     <section class="section section-light">
         <h2>Search</h2>
-        <form>
-            <div class="form-row">
+        <form id="search-input">
+                <p></p>
+
+                <input id="data-remote" />
+            <!-- <div class="form-row">
                 <div class="col-7">
                     <input type="text" class="form-control" placeholder="City">
                 </div>
@@ -69,7 +78,7 @@
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Zip">
                 </div>
-            </div>
+            </div> -->
         </form>
         <button class="smallbutton">Locate!</button>
     </section>
@@ -171,7 +180,7 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>

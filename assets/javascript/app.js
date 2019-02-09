@@ -2,6 +2,16 @@
 
 console.log("test");
 
+var options = {
+    url: function(search) {
+        return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
+    },
+
+    getValue: "name",
+};
+
+$("#data-remote").easyAutocomplete(options);
+
 
 // Open Brewery DB API - www.openbrewerydb.org
 var city = 'Sacramento';
@@ -26,10 +36,11 @@ if (search !== '') {
 
 
 
-$.ajax({
-    url: queryURL,
-    method: 'GET'
-}).then(function (response) {
+// $.ajax({
+//     url: queryURL,
+//     method: 'GET'
+// }).then(function (response) {
+
 
     console.log(queryURL);
     console.log(response)
@@ -39,20 +50,25 @@ $.ajax({
 
 
 
+
 // Eventbrite API. The first ajax gets the basic info, while the seond one gets the location info. For 'VenueID' the number has to be changed  to whichever item you're looking at on the page.
 
 
-var city = 'Sacramento';
+// var city = 'Sacramento';
+
 
 
 var tokenEB = 'LTCWX6ZN5R4U7VWXPNCG';
 var queryURLEB = 'https://www.eventbriteapi.com/v3/events/search/?token=' + tokenEB + '&location.address=' + city ;
 
-$.ajax({
-    url: queryURLEB,
-    method: 'GET'
-}).then(function (response) {
 
-    console.log(response);
+// $.ajax({
+//     url: queryURLEB,
+//     method: 'GET'
+// }).then(function (response) {
+
+//     console.log(response);
+
 
 })
+
