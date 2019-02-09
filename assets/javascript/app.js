@@ -2,6 +2,16 @@
 
 console.log("test");
 
+var options = {
+    url: function(search) {
+        return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
+    },
+
+    getValue: "name",
+};
+
+$("#data-remote").easyAutocomplete(options);
+
 
 // Open Brewery DB API - www.openbrewerydb.org
 var city = 'Sacramento';
@@ -26,13 +36,13 @@ if (search !== '') {
 
 
 
-$.ajax({
-    url: queryURL,
-    method: 'GET'
-}).then(function (response) {
+// $.ajax({
+//     url: queryURL,
+//     method: 'GET'
+// }).then(function (response) {
 
-    console.log(queryURL);
-    console.log(response)
+//     console.log(queryURL);
+//     console.log(response)
     // for (var i = 0; i < response.length; i++) {
     //     var newRow = $('<tr>').append(
     //         $('<td>').text(response[i].name),
@@ -41,7 +51,7 @@ $.ajax({
     //         $('<td>').text(response[i].phone),
     //     )
     //     $('#list').append(newRow);
-    })
+    // })
 
 
 // });
@@ -49,18 +59,18 @@ $.ajax({
 // Eventbrite API. The first ajax gets the basic info, while the seond one gets the location info. For 'VenueID' the number has to be changed  to whichever item you're looking at on the page.
 
 
-var city = 'Sacramento';
+// var city = 'Sacramento';
 
 
-var tokenEB = 'LTCWX6ZN5R4U7VWXPNCG';
-var queryURLEB = 'https://www.eventbriteapi.com/v3/events/search/?location.address=' + city + '&token=' + tokenEB + '&limit=5';
+// var tokenEB = 'LTCWX6ZN5R4U7VWXPNCG';
+// var queryURLEB = 'https://www.eventbriteapi.com/v3/events/search/?location.address=' + city + '&token=' + tokenEB + '&limit=5';
 
-$.ajax({
-    url: queryURLEB,
-    method: 'GET'
-}).then(function (response) {
+// $.ajax({
+//     url: queryURLEB,
+//     method: 'GET'
+// }).then(function (response) {
 
-    console.log(response);
+//     console.log(response);
 
     // var secretTokenEB = 'GFBRL2DNRQJRRLKXRXK3'
     // var venueID = response.events[32].venue_id;
@@ -73,7 +83,7 @@ $.ajax({
     // }).then(function (response2) {
     //     console.log(response2)
     // })
-})
+// })
 
 // var secretTokenEB = 'GFBRL2DNRQJRRLKXRXK3'
 
