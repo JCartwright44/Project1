@@ -66,6 +66,10 @@ body, html{
    
 }
 
+#brewery-info {
+    overflow: scroll;
+}
+
 .easy-autocomplete {
     margin: auto;
 }
@@ -75,6 +79,27 @@ body, html{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
 }
+
+#eac-container-city {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+
+#eac-container-zip {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+
+#eac-container-state {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+
+
+
 
 .border{
     /* background-color: ivory; */
