@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="assets/javascript/easy-autocomplete.min.css" rel="stylesheet" type="text/css">
+	<script src="assets/javascript/jquery-1.11.2.min.js"></script>
+	<script src="assets/javascript/jquery.easy-autocomplete.min.js" type="text/javascript" ></script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <title>Brew[array]</title>
 </head>
 
 <body>
-    <div id="p0" class="image1">
+    <div id="p0" class="image1 overlay">
         <div class="image-text">
             <span class="border">
                 Brew[array]
             </span>
+            <br>
             <a href="#p4">
                 <button class="button">Search!</button></a>
             <a href="#p1">
@@ -24,7 +33,7 @@
             <a href="#p2">
                 <button class="button">Reviews!</button></a>
             <a href="#p3">
-                <button class="button">Contact Us!</button></a>
+                <button class="button">Sign Up!</button></a>
         </div>
     </div>
 
@@ -38,7 +47,7 @@
             perferendis, excepturi ullam sunt eaque pariatur fuga veritatis aliquid unde possimus! Ea adipisci
             perferendis ipsam saepe tempora laboriosam obcaecati officiis numquam dicta, tenetur iste omnis asperiores
             debitis sequi!</p>
-        <div id="p4"></div>
+            <div id="p4"></div>
     </section>
     <div></div>
 
@@ -51,12 +60,15 @@
                 <button class="smallbutton">Home!</button> </a>
         </div>
     </div>
-
+    
 
     <section class="section section-light">
         <h2>Search</h2>
-        <form>
-            <div class="form-row">
+        <form id="search-input">
+                <p></p>
+
+                <input id="data-remote" />
+            <!-- <div class="form-row">
                 <div class="col-7">
                     <input type="text" class="form-control" placeholder="City">
                 </div>
@@ -66,7 +78,7 @@
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Zip">
                 </div>
-            </div>
+            </div> -->
         </form>
         <button class="smallbutton">Locate!</button>
     </section>
@@ -138,7 +150,7 @@
     <div class="image4">
         <div class="image-text">
             <span class="border">
-                Contact Us!
+                Sign Up!
             </span>
             <a href="#p0">
                 <button class="smallbutton">Home!</button> </a>
@@ -146,70 +158,33 @@
     </div>
 
     <section class="section section-dark">
-        <h2 id="p4">Contact Us</h2>
-        <!--
-        <form>
-            
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Name</label>
-                <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Your Name">
-            </div>
-
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Comments</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-            </div>
-            
-        </form>
-    -->
-
-    <h2></h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+        <h2 id="p4">Sign Up</h2>
+<button class="modalButton" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
 
 <div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="images/contact.jpg" alt="Avatar" class="avatar">
-    </div>
-
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">Close</span>
+  <form class="modal-content" action="/action_page.php">
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signup">Sign Up</button>
+      </div>
     </div>
   </form>
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+    </section>
 
     <div class="image1">
         <div class="image-text">
@@ -219,6 +194,11 @@ window.onclick = function(event) {
         </div>
     </div>
 
+
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+    <script src="./assets/javascript/app.js"></script>
 </body>
 
 </html>
