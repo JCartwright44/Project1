@@ -141,7 +141,8 @@ body, html{
     font-size: 60px;
     color: white;
     padding: 10px;
-    margin: 0 auto;
+    margin-top: 100px;
+    /* margin: auto; */
 }
 
 
@@ -185,6 +186,19 @@ a {
     width: 50%;
     border: 1px solid white;
 
+}
+
+.homebutton{
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid white;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .smallbutton{
