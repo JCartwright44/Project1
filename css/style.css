@@ -96,9 +96,17 @@ body, html{
     /* border: 1px solid white; */
     width: 45%;
     font-family: 'Roboto Condensed', sans-serif;
+    text-transform: initial;
     float: right;
     margin-top: -400px;
     /* margin: 0 auto; */
+}
+
+#website {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: initial;
+    font-size: 18px;
+    font-weight: normal;
 }
 
 #data-remote {

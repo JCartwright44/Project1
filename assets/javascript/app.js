@@ -13,6 +13,7 @@ var spec = 'name';
 var city = 'city'
 var zip = 'postal_code'
 var state = 'state'
+var website = 'website'
 
 var options = {
     url: function(search) {
@@ -92,10 +93,14 @@ $.ajax({
         var brewZip = $("<p>");
         brewZip.html(response[i].postal_code);
 
+        var website = $('<a id="website">');
+        website.attr("href", response[i].website_url);
+        website.html(response[i].website_url);
+
     console.log("brew name", brewName);
 
     
-    $("#brewery-info").append(brewName, brewAddress, brewCity, brewState, brewZip);
+    $("#brewery-info").append(brewName, brewAddress, brewCity, brewState, brewZip, website);
 
 
     console.log(queryURL);
@@ -129,9 +134,15 @@ $(".smallbutton").on('click', function(event){
     if (inputZip.length > 0){
         searchQuery.push("by_postal_code=" + inputZip);
     }
+
     searchQuery = searchQuery.join("&");
 
     getBreweryInfo(searchQuery);
+
+    $("#data-remote").val('');
+    $("#city").val('');
+    $("#state").val('');
+    $("#zip").val('');
 
 })
 // Open Brewery DB API - www.openbrewerydb.org
