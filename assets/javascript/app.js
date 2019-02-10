@@ -57,6 +57,7 @@ function getBreweryInfo(search){
 //     var pCode = '';
 //     var state = '';
 
+<<<<<<< HEAD
 // var param = $.param({
 //     by_name:name,
 //     by_city: city,
@@ -80,10 +81,13 @@ console.log(queryURL);
 
 console.log("Get Brewery Info");
 
+=======
+>>>>>>> api changes
 $.ajax({
     url: queryURL,
     method: 'GET'
 }).then(function (response) {
+<<<<<<< HEAD
 
     console.log(response);
     $("#brewery-info").empty();
@@ -108,6 +112,8 @@ $.ajax({
 
     
     $("#brewery-info").append(brewName, brewAddress, brewCity, brewState, brewZip);
+=======
+>>>>>>> api changes
 
 
     console.log(queryURL);
@@ -156,11 +162,19 @@ $(".smallbutton").on('click', function(event){
 // Eventbrite API. The first ajax gets the basic info, while the seond one gets the location info. For 'VenueID' the number has to be changed  to whichever item you're looking at on the page.
 
 
+<<<<<<< HEAD
 var city = 'Sacramento';
 
 
+=======
+var city = '';
+var name = 'Sactown Union Brewery';
+var name2 = name.replace(/ /g,"+");
+>>>>>>> api changes
 
+if (name !== '') {
 var tokenEB = 'LTCWX6ZN5R4U7VWXPNCG';
+<<<<<<< HEAD
 var queryURLEB = 'https://www.eventbriteapi.com/v3/events/search/?token=' + tokenEB + '&location.address=' + city ;
 
 
@@ -170,7 +184,17 @@ $.ajax({
 }).then(function (response) {
 
     // console.log(response);
+=======
+var queryURLEB = 'https://www.eventbriteapi.com/v3/events/search/?token=' + tokenEB + '&q=' + name2  + '&location.address=' + city;
+>>>>>>> api changes
 
 
+$.ajax({
+    url: queryURLEB,
+    method: 'GET'
+}).then(function (response) {
+    console.log(response.events);
 })
+}
+
 
