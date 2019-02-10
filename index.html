@@ -24,24 +24,28 @@
 <body>
     <div id="p0" class="image1 overlay">
         <div class="image-text">
+            <img id="beer-image" src="images/beer-white.png">
             <span class="border">
                 Brew[array]
             </span>
             <br>
             <a href="#p4">
-                <button class="button">Search!</button></a>
+                <button class="button">Search</button></a>
+                <a href="#">|</a>
             <a href="#p1">
-                <button class="button">Images!</button></a>
+                <button class="button">Images</button></a>
+                <a href="#">|</a>
             <a href="#p2">
-                <button class="button">Reviews!</button></a>
+                <button class="button">Reviews</button></a>
+                <a href="#">|</a>
             <a href="#p3">
-                <button class="button">Sign Up!</button></a>
+                <button class="button">Sign Up</button></a>
         </div>
     </div>
 
     <section class="section section-light">
         <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed in doloremque velit optio eveniet ut
+        <p id="about"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed in doloremque velit optio eveniet ut
             itaque dolorum est nemo illo necessitatibus sit dolores quas architecto, delectus excepturi quae ea totam
             hic et! Earum, culpa! Maxime cum amet facere, dolores autem voluptatum. Ab cupiditate perspiciatis quisquam
             voluptate nihil explicabo laboriosam cumque totam nam exercitationem excepturi, necessitatibus vitae omnis
@@ -55,7 +59,7 @@
 
     <div class="image5">
         <div class="image-text">
-            <span class="border">
+            <span class="header">
                 Search For Delicious Beer!
             </span>
             <a href="#p0">
@@ -64,37 +68,37 @@
     </div>
 
 
-    <div class="section section-light search">
+    <div class="section section-light search clearfix-search">
+        <div id="left-side">
         <h2>Search</h2>
                 <form id="search-input">
                     <p></p>
 
                     <input type="text" id="data-remote" placeholder="Brewery Name" />
-                    <br>
 
                     <input type="text" id="city" placeholder="City" />
-                    <br>
 
                     <input type="text" id="state" placeholder="State" />
-                    <br>
 
                     <input type="text" id="zip" placeholder="Zip Code" />
-                    <br>
 
                     <button class="smallbutton">Locate!</button>
 
                 </form>
+        </div>
+        <div id="map">Map Goes Here</div>
 
+        <div id="right-side">
                 <div id="brewery-info">
-                    <h1>Test</h1>
                 </div>
+            </div>
     </div>
 
     <div id="p1"></div>
 
     <div class="image2">
         <div class="image-text">
-            <span class="border">
+            <span class="header">
                 Find brewery events in your area!
             </span>
             <a href="#p0">
@@ -112,7 +116,7 @@
 
     <div class="image3">
         <div class="image-text">
-            <span class="border">
+            <span class="header">
                 Review Delicious(or not) Beer!
             </span>
             <a href="#p0">
@@ -170,7 +174,7 @@
     <div class="image1">
         <div class="image-text">
             <a href="#p0">
-                <button class="bigbutton">Home!</button></a>
+                <button class="smallbutton">Home!</button></a>
 
         </div>
     </div>

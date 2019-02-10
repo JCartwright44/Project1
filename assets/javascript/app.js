@@ -2,6 +2,13 @@
 
 console.log("test");
 
+function loadPage(){
+    $("#right-side").hide();
+    $("#map").hide();
+}
+
+loadPage();
+
 var spec = 'name';
 var city = 'city'
 var zip = 'postal_code'
@@ -52,27 +59,6 @@ $("#state").easyAutocomplete(newState);
 
 function getBreweryInfo(search){
     console.log("This is the search", search);
-//     var name ='';
-//     var city = 'Sacramento';
-//     var pCode = '';
-//     var state = '';
-
-// var param = $.param({
-//     by_name:name,
-//     by_city: city,
-//     by_postal_code: pCode,
-//     by_state: state,
-//     per_page: '4'
-// })
-// console.log(param)
-
-// var search = '';
-
-// if (search !== '') {
-//     var queryURL = 'https://api.openbrewerydb.org/breweries/search?query=' + search + '&' + param;
-// } else {
-//     var queryURL = 'https://api.openbrewerydb.org/breweries?' + param;
-// }
 
 var queryURL = "https://api.openbrewerydb.org/breweries?" + search + "&per_page=5"
 
@@ -87,6 +73,8 @@ $.ajax({
 
     console.log(response);
     $("#brewery-info").empty();
+    $("#right-side").show();
+    $("#map").show();
 
     for (i = 0; i<response.length; i++){
         var brewName = $("<h1>");
