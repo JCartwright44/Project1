@@ -30,22 +30,22 @@ body, html{
 
 .image2{
     background-image:url(../images/bottles.jpg);
-    min-height: 225px;
+    min-height: 300px;
 }
 
 .image3{
     background-image:url(../images/samples.jpg);
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .image4{
     background-image:url(../images/cheers.jpg);
-    min-height: 225px;
+    min-height: 300px;
 }
 
 .image5{
     background-image:url(../images/brewery.jpg);
-    min-height: 225px;
+    min-height: 300px;
 }
 
 .section{
@@ -57,8 +57,7 @@ body, html{
     background-color: rgb(39, 45, 46);
     color: white;
 }
-
-.image-text{
+.image-home{
     position: absolute;
     top: 50%;
     width: 100%;
@@ -68,6 +67,18 @@ body, html{
     letter-spacing: 5px;
     line-height: 40px;
     margin-top: -100px;
+}
+
+.image-text{
+    position: absolute;
+    /* top: 50%; */
+    width: 100%;
+    text-align: center;
+    color: rgba(85, 51, 7, 0.959);
+    font-size: 50px;
+    letter-spacing: 5px;
+    line-height: 40px;
+    margin-top: 125px;
 }
 
 .clearfix-search {
@@ -142,6 +153,7 @@ body, html{
     color: white;
     padding: 10px;
     margin-top: 100px;
+    padding: 10px;
     /* margin: auto; */
 }
 
@@ -189,14 +201,14 @@ a {
 }
 
 .homebutton{
-    background-color: transparent;
+    background-color: white;
     padding: 10px;
     border: 1px solid white;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
     font-size: 14px;
     letter-spacing: 2px;
-    color: white;
+    color: black;
     cursor: pointer;
     margin-bottom: 20px;
 }
