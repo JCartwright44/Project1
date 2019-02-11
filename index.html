@@ -23,25 +23,29 @@
 
 <body>
     <div id="p0" class="image1 overlay">
-        <div class="image-text">
+        <div class="image-home">
+            <img id="beer-image" src="images/beer-white.png">
             <span class="border">
                 Brew[array]
             </span>
             <br>
             <a href="#p4">
-                <button class="button">Search!</button></a>
+                <button class="button">Search</button></a>
+                <a href="#">|</a>
             <a href="#p1">
-                <button class="button">Images!</button></a>
+                <button class="button">Images</button></a>
+                <a href="#">|</a>
             <a href="#p2">
-                <button class="button">Reviews!</button></a>
+                <button class="button">Reviews</button></a>
+                <a href="#">|</a>
             <a href="#p3">
-                <button class="button">Sign Up!</button></a>
+                <button class="button">Sign Up</button></a>
         </div>
     </div>
 
     <section class="section section-light">
         <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed in doloremque velit optio eveniet ut
+        <p id="about"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed in doloremque velit optio eveniet ut
             itaque dolorum est nemo illo necessitatibus sit dolores quas architecto, delectus excepturi quae ea totam
             hic et! Earum, culpa! Maxime cum amet facere, dolores autem voluptatum. Ab cupiditate perspiciatis quisquam
             voluptate nihil explicabo laboriosam cumque totam nam exercitationem excepturi, necessitatibus vitae omnis
@@ -51,107 +55,83 @@
             debitis sequi!</p>
         <div id="p4"></div>
     </section>
-    <div></div>
+    <!-- <div></div> -->
 
     <div class="image5">
         <div class="image-text">
-            <span class="border">
+            <span class="header">
                 Search For Delicious Beer!
             </span>
+            <br>
             <a href="#p0">
-                <button class="smallbutton">Home!</button> </a>
+                <button class="homebutton">Home</button> </a>
         </div>
     </div>
 
 
-    <div class="section section-light search">
+    <div class="section section-light search clearfix-search">
+        <div id="left-side">
         <h2>Search</h2>
                 <form id="search-input">
                     <p></p>
 
                     <input type="text" id="data-remote" placeholder="Brewery Name" />
-                    <br>
 
                     <input type="text" id="city" placeholder="City" />
-                    <br>
 
                     <input type="text" id="state" placeholder="State" />
-                    <br>
 
                     <input type="text" id="zip" placeholder="Zip Code" />
-                    <br>
+
+                    <!-- <input type="text" id="website" placeholder="Website" /> -->
 
                     <button class="smallbutton">Locate!</button>
 
                 </form>
+        </div>
+        <div id="map">Map Goes Here</div>
 
+        <div id="right-side">
                 <div id="brewery-info">
-                    <h1>Test</h1>
                 </div>
+            </div>
     </div>
 
     <div id="p1"></div>
 
     <div class="image2">
         <div class="image-text">
-            <span class="border">
-                Look At Delicious Beer!
+            <span class="header">
+                Find brewery events in your area!
             </span>
+            <br>
             <a href="#p0">
-                <button class="smallbutton">Home!</button> </a>
+                <button class="homebutton">Home!</button> </a>
         </div>
     </div>
 
     <section class="section section-dark">
-        <h2>Brewery Images</h2>
+        <h2>Events</h2>
 
-        <div class="card" style="width: 18rem;">
-            <img src="images/bottles.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Brewery description sourced from an API</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="images/bottles.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Brewery description sourced from an API</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="images/bottles.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Brewery description sourced from an API</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="images/bottles.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Brewery description sourced from an API</p>
-            </div>
-        </div>
+        <div id='events'></div>
+
     </section>
     <div id="p2"></div>
 
     <div class="image3">
         <div class="image-text">
-            <span class="border">
+            <span class="header">
                 Review Delicious(or not) Beer!
             </span>
+            <br>
             <a href="#p0">
-                <button class="smallbutton">Home!</button> </a>
+                <button class="homebutton">Home!</button> </a>
         </div>
     </div>
 
     <section class="section section-light">
-        <h2>Brewery Reviews</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed in doloremque velit optio eveniet ut
-            itaque dolorum est nemo illo necessitatibus sit dolores quas architecto, delectus excepturi quae ea totam
-            hic et! Earum, culpa! Maxime cum amet facere, dolores autem voluptatum. Ab cupiditate perspiciatis quisquam
-            voluptate nihil explicabo laboriosam cumque totam nam exercitationem excepturi, necessitatibus vitae omnis
-            quibusdam eligendi voluptates? Voluptas, error obcaecati sed libero vitae odit iure dolor, ipsam tenetur
-            perferendis, excepturi ullam sunt eaque pariatur fuga veritatis aliquid unde possimus! Ea adipisci
-            perferendis ipsam saepe tempora laboriosam obcaecati officiis numquam dicta, tenetur iste omnis asperiores
-            debitis sequi!</p>
+        <h2>My watering holes</h2>
+        <p id='favorites'>Sign in to begin building a list of your favorite breweries</p>
     </section>
     <div id="p3"></div>
 
@@ -160,8 +140,9 @@
             <span class="border">
                 Sign Up!
             </span>
+            <br>
             <a href="#p0">
-                <button class="smallbutton">Home!</button> </a>
+                <button class="homebutton">Home!</button> </a>
         </div>
     </div>
 
@@ -199,7 +180,7 @@
     <div class="image1">
         <div class="image-text">
             <a href="#p0">
-                <button class="bigbutton">Home!</button></a>
+                <button class="homebutton">Home!</button></a>
 
         </div>
     </div>

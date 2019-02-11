@@ -2,7 +2,8 @@ body, html{
     height: 100%;
     margin:0;
     font-size: 16px;
-    font-family: 'Acme', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
     font-weight: 400;
     line-height: 1.8em;
     color: #666;
@@ -17,30 +18,34 @@ body, html{
     background-attachment: fixed;
 }
 
+#beer-image {
+    width: 100px;
+}
+
 .image1{
-    background-image:url(../images/tray.jpeg);
+    background-image:url(../images/tray-black.jpg);
     min-height: 100%;
     
 }
 
 .image2{
     background-image:url(../images/bottles.jpg);
-    min-height: 225px;
+    min-height: 300px;
 }
 
 .image3{
     background-image:url(../images/samples.jpg);
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .image4{
     background-image:url(../images/cheers.jpg);
-    min-height: 225px;
+    min-height: 300px;
 }
 
 .image5{
     background-image:url(../images/brewery.jpg);
-    min-height: 225px;
+    min-height: 300px;
 }
 
 .section{
@@ -52,8 +57,7 @@ body, html{
     background-color: rgb(39, 45, 46);
     color: white;
 }
-
-.image-text{
+.image-home{
     position: absolute;
     top: 50%;
     width: 100%;
@@ -62,12 +66,63 @@ body, html{
     font-size: 50px;
     letter-spacing: 5px;
     line-height: 40px;
-    
-   
+    margin-top: -100px;
 }
 
-#brewery-info {
-    overflow: scroll;
+.image-text{
+    position: absolute;
+    /* top: 50%; */
+    width: 100%;
+    text-align: center;
+    color: rgba(85, 51, 7, 0.959);
+    font-size: 50px;
+    letter-spacing: 5px;
+    line-height: 40px;
+    margin-top: 125px;
+}
+
+.clearfix-search {
+    overflow: auto;
+}
+
+#left-side {
+    /* border: 1px solid white; */
+    width: 25%;
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 10%;
+}
+
+#right-side {
+    /* border: 1px solid white; */
+    width: 45%;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: initial;
+    float: right;
+    margin-top: -400px;
+    /* margin: 0 auto; */
+}
+
+#website {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: initial;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#data-remote {
+    margin-bottom: 10px;
+}
+
+#city {
+    margin-bottom: 10px;
+}
+
+#state {
+    margin-bottom: 10px;
+}
+
+#zip {
+    margin-bottom: 10px;
 }
 
 .easy-autocomplete {
@@ -98,43 +153,85 @@ body, html{
     margin: 0 auto;
 }
 
-
+.header {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight:  bold;   
+    font-size: 60px;
+    color: white;
+    padding: 10px;
+    margin-top: 100px;
+    padding: 10px;
+    /* margin: auto; */
+}
 
 
 .border{
-    /* background-color: ivory; */
     padding: 10px;
     color: white;
-    /* border-radius: 15px 50px; */
-    /* font-family: 'lobster', cursive; */
     font-family: 'Roboto Condensed', sans-serif;
-    size: auto;
+    font-weight:  bold;   
+    font-size: 100px;
+    margin-top: 100px;
     
 }
 
 .button{
     margin-top: 50px;
-    background-color: ivory;
+    background-color: transparent;
     padding: 10px;
-    /* border-radius: 15px 50px; */
+    border: none;
     /* font-family: 'lobster', cursive; */
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
-    font-size: 30px;
-    color: rgba(85, 51, 7, 0.959);
+    text-transform: uppercase;
+    font-size: 25px;
+    color: white;
     cursor: pointer;
+    letter-spacing: 3px;
     
 }
 
-.smallbutton{
-    background-color: ivory;
+a {
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+#map {
+    margin-top: 30px;
+    width: 50%;
+    border: 1px solid white;
+
+}
+
+.homebutton{
+    background-color: white;
     padding: 10px;
-    border-radius: 15px 50px;
-    font-family: 'lobster', cursive;
+    border: 1px solid white;
+    font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
-    font-size: 10px;
-    color: rgba(85, 51, 7, 0.959);
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: black;
     cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.smallbutton{
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid white;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .bigbutton{
@@ -394,4 +491,29 @@ hr {
   .cancelbtn, .signupbtn {
     width: 100%;
   }
+}
+
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+h2 {
+    letter-spacing: 1px;
+}
+
+p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    line-height: 7px;
+}
+
+#about {
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-transform: initial;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 30px;
 }
