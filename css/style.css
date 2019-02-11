@@ -386,6 +386,12 @@ p {
     line-height: 7px;
 }
 
+address {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+}
+
 #about {
     line-height: 25px;
     letter-spacing: 1px;

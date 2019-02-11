@@ -86,30 +86,19 @@ $.ajax({
         + response[i].city + ', ' 
         + response[i].state +', ' 
         + response[i].postal_code 
-        + '</address>');
-
-
-        // var brewCity = $("<p>");
-        // brewCity.html(response[i].city);
-
-        // var brewState = $("<p>");
-        // brewState.html(response[i].state);
-
-        // var brewZip = $("<p>");
-        // brewZip.html(response[i].postal_code);
+        + '</address>' + '<br/>');
 
         var website = $('<a id="website">');
         website.attr("href", response[i].website_url);
-        website.html(response[i].website_url + '<br/>');
+        website.html(response[i].website_url + '<br/>' + '<br/>');
 
     console.log("brew name", brewName);
 
     
     $("#brewery-info").append(brewName, brewAddress, website);
 
-
+    console.log(response);
     console.log(queryURL);
-    console.log(brewName, brewAddress, brewCity, brewState, brewZip)
 
     }
 
