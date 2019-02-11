@@ -9,7 +9,7 @@ function loadPage(){
 
 loadPage();
 
-var spec = 'name';
+var name = 'name';
 var city = 'city'
 var zip = 'postal_code'
 var state = 'state'
@@ -20,14 +20,14 @@ var options = {
         return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
     },
 
-    getValue: spec,
+    getValue: name,
 };
 
 $("#data-remote").easyAutocomplete(options);
 
 var newOptions = {
     url: function(search) {
-        return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
+        return 'https://api.openbrewerydb.org/breweries?by_city=' + search;
     },
 
     getValue: city,
@@ -37,7 +37,7 @@ $("#city").easyAutocomplete(newOptions);
 
 var postalCode = {
     url: function(search) {
-        return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
+        return 'https://api.openbrewerydb.org/breweries?by_postal_code=' + search;
     },
 
     getValue: zip,
@@ -47,7 +47,7 @@ $("#zip").easyAutocomplete(postalCode);
 
 var newState = {
     url: function(search) {
-        return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
+        return 'https://api.openbrewerydb.org/breweries?by_state=' + search;
     },
 
     getValue: state,
@@ -81,30 +81,24 @@ $.ajax({
         var brewName = $("<h1>");
         brewName.html(response[i].name);
 
-        var brewAddress = $("<p>");
-        brewAddress.html(response[i].street);
-
-        var brewCity = $("<p>");
-        brewCity.html(response[i].city);
-
-        var brewState = $("<p>");
-        brewState.html(response[i].state);
-
-        var brewZip = $("<p>");
-        brewZip.html(response[i].postal_code);
+        var brewAddress = $('<address>'
+        + response[i].street + '<br/>'
+        + response[i].city + ', ' 
+        + response[i].state +', ' 
+        + response[i].postal_code 
+        + '</address>' + '<br/>');
 
         var website = $('<a id="website">');
         website.attr("href", response[i].website_url);
-        website.html(response[i].website_url);
+        website.html(response[i].website_url + '<br/>' + '<br/>');
 
     console.log("brew name", brewName);
 
     
-    $("#brewery-info").append(brewName, brewAddress, brewCity, brewState, brewZip, website);
+    $("#brewery-info").append(brewName, brewAddress, website);
 
-
+    console.log(response);
     console.log(queryURL);
-    console.log(brewName, brewAddress, brewCity, brewState, brewZip)
 
     }
 
