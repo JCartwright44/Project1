@@ -14,6 +14,8 @@ var city = 'city'
 var zip = 'postal_code'
 var state = 'state'
 var website = 'website'
+var number = 1;
+var searchString = "";
 
 var options = {
     url: function(search) {
@@ -60,8 +62,9 @@ $("#state").easyAutocomplete(newState);
 
 function getBreweryInfo(search){
     console.log("This is the search", search);
+    
 
-var queryURL = "https://api.openbrewerydb.org/breweries?" + search + "&per_page=5"
+var queryURL = "https://api.openbrewerydb.org/breweries?" + search + "&page=" + number + "&per_page=5"
 
 console.log(queryURL);
 
@@ -86,28 +89,47 @@ $.ajax({
         + response[i].city + ', ' 
         + response[i].state +', ' 
         + response[i].postal_code 
-        + '</address>' + '<br/>');
+        + '</address>');
 
         var website = $('<a id="website">');
         website.attr("href", response[i].website_url);
         website.html(response[i].website_url + '<br/>' + '<br/>');
 
-    console.log("brew name", brewName);
-
     
     $("#brewery-info").append(brewName, brewAddress, website);
 
-    console.log(response);
-    console.log(queryURL);
+    var resultsBtn = $('<button id="results">See More Results</button>');
+    var lastPage = $('<button id="last-page">Previous Results</button>');
+    resultsBtn.show();
 
     }
 
+    $("#brewery-info").append(lastPage);
+    $("#brewery-info").append(resultsBtn);
+    
+    
+
+    $("#results").on('click', function(){
+        lastPage.show();
+        number++;
+        getBreweryInfo(searchString);
+
+        console.log("Button Clicked");
+    })
+
+    $("#last-page").on('click', function(){
+        number--;
+        getBreweryInfo(searchString);
+
+        console.log("Button Clicked");
+    })
 })
 }
-
     
 
 $(".smallbutton").on('click', function(event){
+    var lastPage = $("#last-page");
+    lastPage.hide();
     
     event.preventDefault();
     searchQuery = [];
@@ -129,9 +151,9 @@ $(".smallbutton").on('click', function(event){
         searchQuery.push("by_postal_code=" + inputZip);
     }
 
-    searchQuery = searchQuery.join("&");
+    searchString = searchQuery.join("&");
 
-    getBreweryInfo(searchQuery);
+    getBreweryInfo(searchString);
 
     $("#data-remote").val('');
     $("#city").val('');

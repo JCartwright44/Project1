@@ -90,6 +90,7 @@ body, html{
     width: 25%;
     font-family: 'Roboto Condensed', sans-serif;
     height: 10%;
+    margin-left: 150px;
 }
 
 #right-side {
@@ -98,15 +99,15 @@ body, html{
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: initial;
     float: right;
-    margin-top: -400px;
+    margin-top: -410px;
     /* margin: 0 auto; */
 }
 
 #website {
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: initial;
-    font-size: 18px;
-    font-weight: normal;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #data-remote {
@@ -232,6 +233,33 @@ a {
     color: white;
     cursor: pointer;
     margin-bottom: 20px;
+}
+
+#results {
+        background-color: transparent;
+        padding: 10px;
+        border: 1px solid white;
+        font-family: 'Roboto Condensed', sans-serif;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 20px;
+}
+
+#last-page {
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid white;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .bigbutton{
@@ -388,8 +416,9 @@ p {
 
 address {
     font-family: 'Roboto Condensed', sans-serif;
+    font-style: normal;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 24px;
 }
 
 #about {
