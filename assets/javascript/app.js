@@ -15,6 +15,7 @@ var zip = 'postal_code'
 var state = 'state'
 var website = 'website'
 var number = 1;
+var searchString = "";
 
 var options = {
     url: function(search) {
@@ -75,7 +76,7 @@ $.ajax({
 }).then(function (response) {
 
     console.log(response);
-    // $("#brewery-info").empty();
+    $("#brewery-info").empty();
     $("#right-side").show();
     $("#map").show();
 
@@ -94,33 +95,41 @@ $.ajax({
         website.attr("href", response[i].website_url);
         website.html(response[i].website_url + '<br/>' + '<br/>');
 
-    // console.log("brew name", brewName);
-
     
     $("#brewery-info").append(brewName, brewAddress, website);
 
-    // console.log(response);
-    // console.log(queryURL);
+    var resultsBtn = $('<button id="results">See More Results</button>');
+    var lastPage = $('<button id="last-page">Previous Results</button>');
+    resultsBtn.show();
 
     }
 
-    var resultsBtn = $('<button id="results">See More Results</button>');
-
+    $("#brewery-info").append(lastPage);
     $("#brewery-info").append(resultsBtn);
     
-    $("#results").on('click', function(){
-        number++;
-        resultsBtn.hide();
-        getBreweryInfo();
     
-        // console.log("Updated 5 results", brewName, brewAddress, website);
+
+    $("#results").on('click', function(){
+        lastPage.show();
+        number++;
+        getBreweryInfo(searchString);
+
+        console.log("Button Clicked");
     })
 
+    $("#last-page").on('click', function(){
+        number--;
+        getBreweryInfo(searchString);
+
+        console.log("Button Clicked");
+    })
 })
 }
     
 
 $(".smallbutton").on('click', function(event){
+    var lastPage = $("#last-page");
+    lastPage.hide();
     
     event.preventDefault();
     searchQuery = [];
@@ -142,9 +151,9 @@ $(".smallbutton").on('click', function(event){
         searchQuery.push("by_postal_code=" + inputZip);
     }
 
-    searchQuery = searchQuery.join("&");
+    searchString = searchQuery.join("&");
 
-    getBreweryInfo(searchQuery);
+    getBreweryInfo(searchString);
 
     $("#data-remote").val('');
     $("#city").val('');
