@@ -14,6 +14,7 @@ var city = 'city'
 var zip = 'postal_code'
 var state = 'state'
 var website = 'website'
+var number = 1;
 
 var options = {
     url: function(search) {
@@ -60,8 +61,9 @@ $("#state").easyAutocomplete(newState);
 
 function getBreweryInfo(search){
     console.log("This is the search", search);
+    
 
-var queryURL = "https://api.openbrewerydb.org/breweries?" + search + "&per_page=5"
+var queryURL = "https://api.openbrewerydb.org/breweries?" + search + "&page=" + number + "&per_page=5"
 
 console.log(queryURL);
 
@@ -73,7 +75,7 @@ $.ajax({
 }).then(function (response) {
 
     console.log(response);
-    $("#brewery-info").empty();
+    // $("#brewery-info").empty();
     $("#right-side").show();
     $("#map").show();
 
@@ -86,25 +88,36 @@ $.ajax({
         + response[i].city + ', ' 
         + response[i].state +', ' 
         + response[i].postal_code 
-        + '</address>' + '<br/>');
+        + '</address>');
 
         var website = $('<a id="website">');
         website.attr("href", response[i].website_url);
         website.html(response[i].website_url + '<br/>' + '<br/>');
 
-    console.log("brew name", brewName);
+    // console.log("brew name", brewName);
 
     
     $("#brewery-info").append(brewName, brewAddress, website);
 
-    console.log(response);
-    console.log(queryURL);
+    // console.log(response);
+    // console.log(queryURL);
 
     }
 
+    var resultsBtn = $('<button id="results">See More Results</button>');
+
+    $("#brewery-info").append(resultsBtn);
+    
+    $("#results").on('click', function(){
+        number++;
+        resultsBtn.hide();
+        getBreweryInfo();
+    
+        // console.log("Updated 5 results", brewName, brewAddress, website);
+    })
+
 })
 }
-
     
 
 $(".smallbutton").on('click', function(event){
