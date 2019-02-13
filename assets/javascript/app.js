@@ -9,25 +9,27 @@ function loadPage(){
 
 loadPage();
 
-var spec = 'name';
+var name = 'name';
 var city = 'city'
 var zip = 'postal_code'
 var state = 'state'
 var website = 'website'
+var number = 1;
+var searchString = "";
 
 var options = {
     url: function(search) {
         return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
     },
 
-    getValue: spec,
+    getValue: name,
 };
 
 $("#data-remote").easyAutocomplete(options);
 
 var newOptions = {
     url: function(search) {
-        return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
+        return 'https://api.openbrewerydb.org/breweries?by_city=' + search;
     },
 
     getValue: city,
@@ -37,7 +39,7 @@ $("#city").easyAutocomplete(newOptions);
 
 var postalCode = {
     url: function(search) {
-        return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
+        return 'https://api.openbrewerydb.org/breweries?by_postal_code=' + search;
     },
 
     getValue: zip,
@@ -47,7 +49,7 @@ $("#zip").easyAutocomplete(postalCode);
 
 var newState = {
     url: function(search) {
-        return 'https://api.openbrewerydb.org/breweries?by_name=' + search;
+        return 'https://api.openbrewerydb.org/breweries?by_state=' + search;
     },
 
     getValue: state,
@@ -60,8 +62,9 @@ $("#state").easyAutocomplete(newState);
 
 function getBreweryInfo(search){
     console.log("This is the search", search);
+    
 
-var queryURL = "https://api.openbrewerydb.org/breweries?" + search + "&per_page=5"
+var queryURL = "https://api.openbrewerydb.org/breweries?" + search + "&page=" + number + "&per_page=5"
 
 console.log(queryURL);
 
@@ -81,63 +84,76 @@ $.ajax({
         var brewName = $("<h1>");
         brewName.html(response[i].name);
 
-        var brewAddress = $("<p>");
-        brewAddress.html(response[i].street);
-
-        var brewCity = $("<p>");
-        brewCity.html(response[i].city);
-
-        var brewState = $("<p>");
-        brewState.html(response[i].state);
-
-        var brewZip = $("<p>");
-        brewZip.html(response[i].postal_code);
+        var brewAddress = $('<address>'
+        + response[i].street + '<br/>'
+        + response[i].city + ', ' 
+        + response[i].state +', ' 
+        + response[i].postal_code 
+        + '</address>');
 
         var website = $('<a id="website">');
         website.attr("href", response[i].website_url);
-        website.html(response[i].website_url);
-
-    console.log("brew name", brewName);
+        website.html(response[i].website_url + '<br/>' + '<br/>');
 
     
-    $("#brewery-info").append(brewName, brewAddress, brewCity, brewState, brewZip, website);
+    $("#brewery-info").append(brewName, brewAddress, website);
 
-
-    console.log(queryURL);
-    console.log(brewName, brewAddress, brewCity, brewState, brewZip)
+    var resultsBtn = $('<button id="results">See More Results</button>');
+    var lastPage = $('<button id="last-page">Previous Results</button>');
+    resultsBtn.show();
 
     }
 
+    $("#brewery-info").append(lastPage);
+    $("#brewery-info").append(resultsBtn);
+    
+    
+
+    $("#results").on('click', function(){
+        lastPage.show();
+        number++;
+        getBreweryInfo(searchString);
+
+        console.log("Button Clicked");
+    })
+
+    $("#last-page").on('click', function(){
+        number--;
+        getBreweryInfo(searchString);
+
+        console.log("Button Clicked");
+    })
 })
 }
-
     
 
 $(".smallbutton").on('click', function(event){
+    var lastPage = $("#last-page");
+    lastPage.hide();
     
     event.preventDefault();
     searchQuery = [];
     console.log("Button clicked");
     var inputBrew = $("#data-remote").val().trim();
     if (inputBrew.length > 0){
-        searchQuery.push("by_name=" + inputBrew);
+        searchQuery.push("by_name=" + inputBrew + "&sort=type,name");
     }
     var inputCity = $("#city").val().trim();
     if (inputCity.length > 0){
-        searchQuery.push("by_city=" + inputCity);
+        searchQuery.push("by_city=" + inputCity + "&sort=type,name");
     }
     var inputState = $("#state"). val().trim();
     if (inputState.length > 0){
-        searchQuery.push("by_state=" + inputState);
+        searchQuery.push("by_state=" + inputState + "&sort=type,name");
     }
     var inputZip = $("#zip").val().trim();
     if (inputZip.length > 0){
         searchQuery.push("by_postal_code=" + inputZip);
     }
 
-    searchQuery = searchQuery.join("&");
+    searchString = searchQuery.join("&");
 
-    getBreweryInfo(searchQuery);
+    getBreweryInfo(searchString);
 
     $("#data-remote").val('');
     $("#city").val('');
