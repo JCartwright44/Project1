@@ -123,10 +123,6 @@ body, html{
     margin-bottom: 10px;
 }
 
-#zip {
-    margin-bottom: 10px;
-}
-
 .easy-autocomplete {
     margin: auto;
 }
@@ -163,8 +159,6 @@ body, html{
     color: white;
     padding: 10px;
     margin-top: 100px;
-    padding: 10px;
-    /* margin: auto; */
 }
 
 
@@ -285,14 +279,180 @@ a {
 .card{
     display: inline-block;
 }
+@media screen and (max-width: 570px){
 
-@media screen and (max-width: 911px){
-    .smallbutton, .bigbutton, .button, .border, .image-text {
+    .border {
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+        display: inline-block;
+        font-size: 50px;
+        
+      }
+
+      #right-side {
+          font-size: 6px;
+      }
+
+      .button {
+        font-size: 10px;
+    }
+
+    .header {
+        font-size: 50px !important;
+        line-height: 60px !important;
+    }
+
+    .text-01 {
+        margin-top: 50px;
+    }
+
+    .break {
+        display: none;
+    }
+
+    .image-text {
+        margin-top: 70px;
+        font-size: 10px;
+        line-height: 30px;
+    }
+
+}
+
+@media screen and (max-width: 660px){
+    .header {
+        font-size: 50px !important;
+    }
+
+    .text-01 {
+        margin-top: 50px;
+    }
+
+    .break {
+        display: none;
+    }
+
+    .image-text {
+        margin-top: 60px;
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 775px){
+    .border {
       width: 100%;
       margin-top: 20px;
       position: relative;
       display: inline-block;
+      font-size: 90px;
+      
     }
+
+    .button {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 20px;
+    }
+
+    #beer-image {
+        margin-top: -50px;
+        width: 85px;
+        margin-bottom: 20px;
+    }
+
+    #about {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .header {
+        margin: 20px;
+        font-size: 55px;
+        line-height: 70px;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .homebutton {
+        margin-top: 0;
+    }
+
+    #left-side {
+        margin-left: 10px;
+    }
+
+    .break {
+        display: none;
+    }
+
+    #results, #last-page {
+        text-align: center;
+        margin: 0 auto;
+        width: 150px;
+        margin-bottom: 10px;
+    }
+    tr img {
+        min-width: 100%;
+    }
+    #table1, #table2, #table3 {
+        display: inline-block;
+        min-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 970px){
+    tr img {
+        min-width: 50%;
+    }
+    #table1, #table2, #table3 {
+        display: inline-block;
+        min-width: 50%;
+    }
+
+    .header {
+        margin: 20px;
+        font-size: 60px;
+        line-height: 80px;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .homebutton {
+        margin-top: 0;
+    }
+
+    #left-side {
+        /* margin-left: 10px; */
+        margin: 0 auto;
+    }
+
+    .break {
+        display: none;
+    }
+
+    .text-01 {
+        margin-top: 50px;
+    }
+
+    #left-side {
+        margin-left: 10px;
+    }
+    
+  }
+
+  @media screen and (max-width: 1225px){
+    tr img {
+        min-width: 50%;
+        align-content: center;
+    }
+    #table1, #table2, #table3 {
+        display: inline-block;
+        min-width: 50%;
+    }
+
   }
 
   * {box-sizing: border-box}

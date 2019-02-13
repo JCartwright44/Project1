@@ -222,7 +222,7 @@ console.log(imgSix);
 
 
 
-var newRow = $('<td>').append(
+var newRow = $('<td id="table1">').append(
     $('<tr>').append('<img src = "' + imgOne + '" /></li>'),
     $('<tr>').append('Event name: ' + response.events[one].name.text),
     $('<tr>').append('Starts: ' + response.events[one].start.local),
@@ -231,7 +231,7 @@ var newRow = $('<td>').append(
     $('<tr>').append('Starts: ' + response.events[two].start.local),
 )
 $('#events').append(newRow);
-var newRow = $('<td>').append(
+var newRow = $('<td id = "table2">').append(
     $('<tr>').append('<img src = "' + imgThree + '" /></li>'),
     $('<tr>').append('Event name: ' + response.events[three].name.text),
     $('<tr>').append('Starts: ' + response.events[three].start.local),
@@ -240,7 +240,7 @@ var newRow = $('<td>').append(
     $('<tr>').append('Starts: ' + response.events[four].start.local),
 )
 $('#events').append(newRow);
-var newRow = $('<td>').append(
+var newRow = $('<td id = "table3">').append(
     $('<tr>').append('<img src = "' + imgFive + '" /></li>'),
     $('<tr>').append('Event name: ' + response.events[five].name.text),
     $('<tr>').append('Starts: ' + response.events[five].start.local),
