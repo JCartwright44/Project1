@@ -11,7 +11,6 @@ loadPage();
 
 var name = 'name';
 var city = 'city'
-var zip = 'postal_code'
 var state = 'state'
 var website = 'website'
 var number = 1;
@@ -36,16 +35,6 @@ var newOptions = {
 };
 
 $("#city").easyAutocomplete(newOptions);
-
-var postalCode = {
-    url: function(search) {
-        return 'https://api.openbrewerydb.org/breweries?by_postal_code=' + search;
-    },
-
-    getValue: zip,
-};
-
-$("#zip").easyAutocomplete(postalCode);
 
 var newState = {
     url: function(search) {
@@ -146,10 +135,6 @@ $(".smallbutton").on('click', function(event){
     if (inputState.length > 0){
         searchQuery.push("by_state=" + inputState + "&sort=type,name");
     }
-    var inputZip = $("#zip").val().trim();
-    if (inputZip.length > 0){
-        searchQuery.push("by_postal_code=" + inputZip);
-    }
 
     searchString = searchQuery.join("&");
 
@@ -158,7 +143,6 @@ $(".smallbutton").on('click', function(event){
     $("#data-remote").val('');
     $("#city").val('');
     $("#state").val('');
-    $("#zip").val('');
 
 })
 // Open Brewery DB API - www.openbrewerydb.org
