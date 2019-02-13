@@ -136,15 +136,15 @@ $(".smallbutton").on('click', function(event){
     console.log("Button clicked");
     var inputBrew = $("#data-remote").val().trim();
     if (inputBrew.length > 0){
-        searchQuery.push("by_name=" + inputBrew);
+        searchQuery.push("by_name=" + inputBrew + "&sort=type,name");
     }
     var inputCity = $("#city").val().trim();
     if (inputCity.length > 0){
-        searchQuery.push("by_city=" + inputCity);
+        searchQuery.push("by_city=" + inputCity + "&sort=type,name");
     }
     var inputState = $("#state"). val().trim();
     if (inputState.length > 0){
-        searchQuery.push("by_state=" + inputState);
+        searchQuery.push("by_state=" + inputState + "&sort=type,name");
     }
     var inputZip = $("#zip").val().trim();
     if (inputZip.length > 0){
