@@ -84,8 +84,11 @@ $.ajax({
         website.attr("href", response[i].website_url);
         website.html(response[i].website_url + '<br/>' + '<br/>');
 
+        var favorites = $('<button id="click">Add to Favorites</button>' + '<br/>' + '<br/>');
+
+
     
-    $("#brewery-info").append(brewName, brewAddress, website);
+    $("#brewery-info").append(brewName, brewAddress, website, favorites);
 
     var resultsBtn = $('<button id="results">See More Results</button>');
     var lastPage = $('<button id="last-page">Previous Results</button>');
