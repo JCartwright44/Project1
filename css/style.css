@@ -279,6 +279,19 @@ a {
 .card{
     display: inline-block;
 }
+
+#tableOne {
+    padding: 10px;
+}
+
+#tableTwo {
+    padding: 10px;
+}
+
+#tableThree {
+    padding: 10px;
+}
+
 @media screen and (max-width: 570px){
 
     .border {
