@@ -170,21 +170,7 @@ $(".smallbutton").on('click', function(event){
 
 // Eventbrite API. The first ajax gets the basic info, while the seond one gets the location info. For 'VenueID' the number has to be changed  to whichever item you're looking at on the page.
 
-var one = Math.round(Math.random() * 49);
-var two = Math.round(Math.random() * 49);
-var three = Math.round(Math.random() * 49);
-var four = Math.round(Math.random() * 49);
-var five = Math.round(Math.random() * 49);
-var six = Math.round(Math.random() * 49);
-
-console.log(one);
-console.log(two);
-console.log(three);
-console.log(four);
-console.log(five);
-console.log(six);
-
-var city = 'Lake Tahoe';
+var city = '';
 var city2 = city.replace(/ /g,"+");
 var searchE = '';
 var searchE2 = searchE.replace(/ /g,"+");
@@ -200,12 +186,53 @@ $.ajax({
 }).then(function (response) {
     console.log(response);
 
-var imgOne = response.events[one].logo.url;
-var imgTwo = response.events[two].logo.url;
-var imgThree = response.events[three].logo.url;
-var imgFour = response.events[four].logo.url;
-var imgFive = response.events[five].logo.url;
-var imgSix = response.events[six].logo.url;
+    var num = response.events.length - 1;
+    console.log('num: ' + num);
+    var one = Math.round(Math.random() * num);
+    var two = Math.round(Math.random() * num);
+    var three = Math.round(Math.random() * num);
+    var four = Math.round(Math.random() * num);
+    var five = Math.round(Math.random() * num);
+    var six = Math.round(Math.random() * num);
+    
+    console.log(one);
+    console.log(two);
+    console.log(three);
+    console.log(four);
+    console.log(five);
+    console.log(six);
+    
+
+if (response.events[one].logo === null || response.events[one].logo.url === null) {
+var imgOne = './images/eventbrite.png';
+}else {var imgOne = response.events[one].logo.url;}
+
+if (response.events[two].logo === null || response.events[two].logo.url === null) {
+    var imgTwo = './images/eventbrite.png';
+}else {var imgTwo = response.events[two].logo.url;}
+
+if (response.events[three].logo=== null || response.events[three].logo.url === null) {
+    var imgThree = './images/eventbrite.png';
+}else {var imgThree = response.events[three].logo.url;}
+
+if (response.events[four].logo === null || response.events[four].logo.url === null) {
+    var imgFour = './images/eventbrite.png';
+}else {var imgFour = response.events[four].logo.url;}
+
+if (response.events[five].logo === null || response.events[five].logo.url === null) {
+    var imgFive = './images/eventbrite.png';
+}else {var imgFive = response.events[five].logo.url;}
+
+if (response.events[six].logo === null || response.events[six].logo.url === null) {
+    var imgSix = './images/eventbrite.png';
+}else {var imgSix = response.events[six].logo.url;}
+
+console.log(imgOne);
+console.log(imgTwo);
+console.log(imgThree);
+console.log(imgFour);
+console.log(imgFive);
+console.log(imgSix);
 
 
 
