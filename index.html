@@ -16,7 +16,6 @@
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin="" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 
 
     <title>Brew[array]</title>
@@ -39,11 +38,14 @@
             <a href="#p2">
                 <button class="button">Reviews</button></a>
                 <a href="#p5">|</a>
-            <a href="#p3">
+            <a href="#p3" id="signUp2">
                 <button class="button">Sign Up</button></a>
                 <a href="#p5">|</a>
-            <a href="#id02">
-                <button class="button" id="logIn">Sign in</button></a>
+            <a href="#id02" id="logIn">
+                <button class="button">Sign in</button></a>
+               <!---- <a href="#p5">|</a> -->
+            <a href="#" id="signOut">
+                <button class="button" onclick="logout()">Sign out</button></a>
         </div>
     </div>
 
@@ -130,24 +132,22 @@
     <section class="section section-light">
         <h2>My watering holes</h2>
         <p id='favorites'>Sign in to begin building a list of your favorite breweries</p>
-        <tbody>
-        </tbody>
     </section>
     <div id="p3"></div>
 
-    <div class="image4">
+    <div class="image4" id="image4">
         <div class="image-text">
             <span class="header">
                 Sign Up!
             </span>
             <br class="break">
             <br>
-            <a href="#p0">
-                <button class="homebutton">Home!</button> </a>
+           <!---<a href="#p0">
+                <button class="homebutton">Home!</button> </a> -->
         </div>
     </div>
 
-    <section class="section section-dark">
+    <section class="section section-dark" id="section">
 
         <h2 id="p4">Sign Up</h2>
 <button class="modalButton" id="signUp">Sign Up</button>
@@ -157,7 +157,8 @@
   <form class="modal-content" id="signUpForm">
     <div class="container">
       <h1>Sign Up</h1>
-      <div class="alert">Welcome to Brewarray!</div>
+      <div id="alert" class="alert">Welcome to Brewarray!</div>
+      
       <p>Please fill in this form to create an account.</p>
       <hr>
       <label for="email"><b>Email</b></label>
@@ -179,7 +180,7 @@
     </section>
 
 
-    <section class="section section-dark">
+    <section class="section section-dark" id="section2">
 
         
 
@@ -213,8 +214,8 @@
 
     <div class="image1">
         <div class="image-text">
-            <a href="#p0">
-                <button class="homebutton">Home!</button></a>
+            <a href="#" id="signOut2">
+                <button class="button" onclick="logout()">Sign out</button></a>
 
         </div>
     </div>

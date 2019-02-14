@@ -357,10 +357,19 @@ button:hover {
 .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336;
+  color: white;
 }
 .signup {
     padding: 14px 20px;
     background-color: green;
+    color:white;
+}
+
+.signin { /* sign in to brewarray */
+    padding: 14px 20px;
+    background-color: green;
+    color: white;
+
 }
 
 .cancelbtn, .signupbtn, .signup {
@@ -370,6 +379,7 @@ button:hover {
 
 .container {
   padding: 16px;
+  background: grey;
 }
 
 .modal {
