@@ -87,6 +87,8 @@ $.ajax({
 
         var favorites = $('<button id="click">Add to Favorites</button>' + '<br/>' + '<br/>');
 
+        console.log("Button Favorites Clicked", favorites);
+
 
     
     $("#brewery-info").append(brewName, brewAddress, website, favorites);
@@ -98,8 +100,7 @@ $.ajax({
     }
 
     $("#brewery-info").append(lastPage);
-    $("#brewery-info").append(resultsBtn);
-    
+    $("#brewery-info").append(resultsBtn);   
     
 
     $("#results").on('click', function(){
