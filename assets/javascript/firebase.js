@@ -1,68 +1,6 @@
  
  
  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB95HHvt9Y67FcllrvjcNvMjYd8bGJK518",
-    authDomain: "fir-cruz.firebaseapp.com",
-    databaseURL: "https://fir-cruz.firebaseio.com",
-    projectId: "fir-cruz",
-    storageBucket: "fir-cruz.appspot.com",
-    messagingSenderId: "192419918937"
-  };
-  firebase.initializeApp(config);
-
-  //
-  document.getElementById("btnSignup").addEventListener('click', e=>{
-    var email = document.getElementById("email").value;
-    var pass = document.getElementById("password").value;
-    
-    firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
-     console.log(error.code)
-     console.log(error.message);
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-
-   
-     
-      
-
-    window.alert("Error: " + errorMessage);
-    });
-  })
-
-  document.getElementById('signUpForm').addEventListener('submit', signUp);
-
-  //sign up form
-  function signUp(e) {
-    e.preventDefault();
-
-  document.querySelector('.alert').style.display = 'block';
-
-  // Hide alert after 3 seconds
-  setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';
-    document.getElementById('id01').style.display = 'none';
-  },3000);
-
-  // Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-// Clear form
-
-  document.getElementById('signUpForm').reset();
-  
-
-}
-   
- 
- // Initialize Firebase
  var config = {
   apiKey: "AIzaSyB95HHvt9Y67FcllrvjcNvMjYd8bGJK518",
   authDomain: "fir-cruz.firebaseapp.com",
@@ -203,5 +141,3 @@ $("#logIn").click(function() {
 function logout(){
 firebase.auth().signOut();
 }
-
-  
