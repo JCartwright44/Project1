@@ -87,6 +87,8 @@ function getBreweryInfo(search){
 
             var favorites = $('<button id="click">Add to Favorites</button>' + '<br/>' + '<br/>');
 
+        console.log("Button Favorites Clicked", favorites);
+
 
     
             $("#brewery-info").append(brewName, brewAddress, website, favorites);
@@ -97,9 +99,13 @@ function getBreweryInfo(search){
 
         }
 
+
+   
+=======
         $("#brewery-info").append(lastPage);
         $("#brewery-info").append(resultsBtn);
     
+
     
 
         $("#results").on('click', function(){
