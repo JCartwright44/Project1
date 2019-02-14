@@ -153,7 +153,7 @@ function getBreweryInfo(search){
             })
         })
         
-        database.ref().on("child_added", function(snap){
+      /*  database.ref().on("child_added", function(snap){
             var save = snap.val();
         
             var $div = $('<div>');
@@ -162,7 +162,7 @@ function getBreweryInfo(search){
             $div.append(save.website + '<hr>');
         
             $("#favBrew").append($div);
-        })
+        }) */
     
         ebCity = response[0].city
 
