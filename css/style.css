@@ -171,7 +171,7 @@ h2 {
     overflow: auto;
 }
     /* Favorites Button */
-#click {
+.click {
     background-color: transparent;
     padding: 10px;
     border: 1px solid white;
@@ -322,6 +322,18 @@ address {
     display: inline-block;
 }
 
+/* Favorites Section  */
+
+#favBrew {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: initial;
+    font-size: 20px;
+}
+
+hr {
+    width: 25%;
+}
+
 /* Sign Up Section  */
 
 * {box-sizing: border-box}
@@ -421,6 +433,24 @@ hr {
   clear: both;
   display: table;
 }
+
+.alert{ /* Alert: Welcome to BrewArray */
+    text-align: center;
+    padding: 10px;
+    background:green;
+    color:white;
+    margin-bottom: 10px;
+    display: none;
+  }
+
+  .alert2{ /* Alert: Welcome to BrewArray */
+    text-align: center;
+    padding: 10px;
+    background: blue;
+    color:white;
+    margin-bottom: 10px;
+    display: none;
+  }
 
 /* Media Query Section  */
 
@@ -745,23 +775,4 @@ hr {
 
 
 /* End of Media Query */
-
-
-.alert{ /* Alert: Welcome to BrewArray */
-    text-align: center;
-    padding: 10px;
-    background:green;
-    color:white;
-    margin-bottom: 10px;
-    display: none;
-  }
-
-  .alert2{ /* Alert: Welcome to BrewArray */
-    text-align: center;
-    padding: 10px;
-    background: blue;
-    color:white;
-    margin-bottom: 10px;
-    display: none;
-  }
 

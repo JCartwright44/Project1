@@ -9,6 +9,22 @@ function loadPage(){
 
 loadPage();
 
+// Firebase
+var config = {
+    apiKey: "AIzaSyA9wbDsCcPyL46Q5-4teM4fDD4kF3ubvQE",
+    authDomain: "brewarray-45f78.firebaseapp.com",
+    databaseURL: "https://brewarray-45f78.firebaseio.com",
+    projectId: "brewarray-45f78",
+    storageBucket: "brewarray-45f78.appspot.com",
+    messagingSenderId: "1090742543611"
+  };
+
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+//------------------//
+
 var name = 'name';
 var city = 'city'
 var state = 'state'
@@ -85,10 +101,11 @@ function getBreweryInfo(search){
             website.attr("href", response[i].website_url);
             website.html(response[i].website_url + '<br/>' + '<br/>');
 
-            var favorites = $('<button id="click">Add to Favorites</button>' + '<br/>' + '<br/>');
+            var name = response[i].name;
+            var address = response[i].street + ' ' + response[i].city + ' ' + response[i].state + ' ' + response[i].postal_code + ' ';
+            var url = response[i].website_url;
 
-        console.log("Button Favorites Clicked", favorites);
-
+            var favorites = $('<button class="click" data-name="' + name + '" data-address="' + address + '" data-website="'+ url  +'">Add to Favorites</button>' + '<br/>' + '<br/>')
 
     
             $("#brewery-info").append(brewName, brewAddress, website, favorites);
@@ -99,13 +116,8 @@ function getBreweryInfo(search){
 
         }
 
-
-   
-=======
         $("#brewery-info").append(lastPage);
         $("#brewery-info").append(resultsBtn);
-    
-
     
 
         $("#results").on('click', function(){
@@ -123,6 +135,34 @@ function getBreweryInfo(search){
             console.log("Button Clicked");
         })
 
+        // Firebase "Favorites" on-click function //
+
+        $(".click").on('click', function(event){
+            console.log("Favorites Button Clicked");
+        
+            event.preventDefault();
+        
+            var brewName = $(this).data('name');
+            var brewAddress = $(this).data('address');
+            var website = $(this).data('website');
+        
+            database.ref().push({
+                brewName:brewName,
+                brewAddress:brewAddress,
+                website:website
+            })
+        })
+        
+        database.ref().on("child_added", function(snap){
+            var save = snap.val();
+        
+            var $div = $('<div>');
+            $div.append('<strong>' + save.brewName + '</strong>' + '<br/>');
+            $div.append(save.brewAddress + '<br/>');
+            $div.append(save.website + '<hr>');
+        
+            $("#favBrew").append($div);
+        })
     
         ebCity = response[0].city
 
