@@ -10,7 +10,9 @@
   messagingSenderId: "192419918937"
 };
 firebase.initializeApp(config);
-// user is signed in
+
+var database = firebase.database();
+// user is signed in--------------------------------------------------------
 firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
   // When user is signed in.
@@ -20,10 +22,14 @@ if (user) {
   $('#logIn').hide();
   $('#image4').hide();
   $('#p3').hide();
+  $('#p6').hide();
   $('#section').hide();
   $('#section2').hide();
   $('#signOut').show();
   $('#signOut2').show();
+
+
+  
 
   var user = firebase.auth().currentUser;
 
@@ -42,11 +48,13 @@ if (user) {
   $('#logIn').show();
   $('#image4').show();
   $('#p3').show();
+  $('#p6').show();
   $('#section').show();
   $('#section2').show();
   $('#signOut').hide();
   $('#signOut2').hide();
-
+  
+  
 
 }
 });
@@ -63,6 +71,8 @@ firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(e
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
+
+              
 
   
 
@@ -83,6 +93,21 @@ firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(e
           document.querySelector('.alert2').style.display = 'none';
           document.getElementById('id02').style.display = 'none';
         },3000);
+
+ /*database.ref */ // save favorite brewery--------------------------
+  database.ref().on("child_added", function(snap){
+    var save = snap.val();
+
+    var $div = $('<div>');
+    $div.append('<strong>' + save.brewName + '</strong>' + '<br/>');
+    $div.append(save.brewAddress + '<br/>');
+    $div.append(save.website + '<hr>');
+
+    $("#favBrew").append($div);
+})
+//-----------------------------------------------------------------------------
+
+
 
        var modal = document.getElementById('id02');
 
@@ -187,11 +212,15 @@ if (user) {
 } else {
   // No user is signed in.
 }
+
+ 
+
 });
 
 //---------------------------------------------------------------------------------//user logout
 
 function logout(){
 firebase.auth().signOut();
+
 
 }
