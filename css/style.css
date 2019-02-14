@@ -769,3 +769,21 @@ address {
     margin: 0 auto;
     margin-bottom: 30px;
 }
+
+.alert{ /* Alert: Welcome to BrewArray */
+    text-align: center;
+    padding: 10px;
+    background:green;
+    color:white;
+    margin-bottom: 10px;
+    display: none;
+  }
+
+  .alert2{ /* Alert: Welcome to BrewArray */
+    text-align: center;
+    padding: 10px;
+    background: blue;
+    color:white;
+    margin-bottom: 10px;
+    display: none;
+  }
