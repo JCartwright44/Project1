@@ -11,15 +11,14 @@ loadPage();
 
 // Firebase
 var config = {
-    apiKey: "AIzaSyA9wbDsCcPyL46Q5-4teM4fDD4kF3ubvQE",
-    authDomain: "brewarray-45f78.firebaseapp.com",
-    databaseURL: "https://brewarray-45f78.firebaseio.com",
-    projectId: "brewarray-45f78",
-    storageBucket: "brewarray-45f78.appspot.com",
-    messagingSenderId: "1090742543611"
+    apiKey: "AIzaSyB95HHvt9Y67FcllrvjcNvMjYd8bGJK518",
+    authDomain: "fir-cruz.firebaseapp.com",
+    databaseURL: "https://fir-cruz.firebaseio.com",
+    projectId: "fir-cruz",
+    storageBucket: "fir-cruz.appspot.com",
+    messagingSenderId: "192419918937"
   };
-
-firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
 var database = firebase.database();
 
