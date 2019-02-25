@@ -19,5 +19,5 @@ The application accepts user input to search APIs that displays breweries and ev
 + Firebase
 + Moment.js
 + Typeahead.js
-+ Open Brewery DB, Eventbrite, Google Maps APIs
++ Open Brewery DB and Eventbrite API
 
